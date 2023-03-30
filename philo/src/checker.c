@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:39:58 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/03/30 11:15:36 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:17:00 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	ft_check_is_num(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
+			if (j == 0 && argv[i][j] == '-')
+				j++;
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("The inputs must be numbers\n");
