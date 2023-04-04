@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:32:25 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/03/30 11:17:38 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:01:34 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int	ft_grab_forks(t_philo *root)
 		usleep(root->data->t_eat * 1000);
 		return (0);
 	}
+	if (root->data->god.died)
+		return (0);
 	pthread_mutex_lock(root->r_fork);
 	ft_print(root, "has taken a fork");
 	return (1);
